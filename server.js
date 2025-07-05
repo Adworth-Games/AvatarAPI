@@ -20,12 +20,12 @@ const colors = [
 ];
 
 const customBackgrounds = {
-    rylo: 'https://cdn.discordapp.com/attachments/1279738547154325535/1388930843795525693/Rectangle_2.png?ex=6862c626&is=686174a6&hm=fbfcc0e8a40aeaae1e0e6cbf8b0007569533548cbd6178d2943c7ec6a7441355',
-    pride: 'https://hrc.imgix.net/Traditional-Gay-Pride-Flag-1600.png?auto=compress%2Cformat&crop=focalpoint&fit=crop&fm=webp&fp-x=0.5&fp-y=0.5&h=680&q=90&w=680&s=469139eba900eb5a99d7d3e8eee13bad',
+    CUSTOM1: 'YOURURL',
+    CUSTOM2: 'YOURURL',
 };
 
 app.get('/', (req, res) => {
-    res.redirect('https://rylo.cloud');
+    res.redirect('https://github.com/Adworth-Games/AvatarAPI');
 });
 
 app.get('/avatar/:userId', async (req, res) => {
