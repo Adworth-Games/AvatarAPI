@@ -36,16 +36,13 @@ app.get('/avatar/:userId', async (req, res) => {
         const response = await axios.get(`https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds=${userId}&size=420x420&format=Png&isCircular=false`);
         const avatarUrl = response.data.data[0].imageUrl;
 
-        // Create a canvas to draw the avatar with a random background color
         const canvas = createCanvas(420, 420);
         const ctx = canvas.getContext('2d');
 
-        // Select a random color from the colors array
         const randomColor = colors[Math.floor(Math.random() * colors.length)];
         ctx.fillStyle = randomColor;
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-        // Load and draw the custom background image if specified
         let backgroundImage;
         if (background && customBackgrounds[background]) {
             backgroundImage = customBackgrounds[background];
@@ -53,11 +50,9 @@ app.get('/avatar/:userId', async (req, res) => {
             ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
         }
 
-        // Load the avatar image and draw it
         const avatarImage = await loadImage(avatarUrl);
         ctx.drawImage(avatarImage, 0, 0, canvas.width, canvas.height);
 
-        // Set response type to PNG
         res.set('Content-Type', 'image/png');
         canvas.toBuffer((err, buffer) => {
             if (err) {
