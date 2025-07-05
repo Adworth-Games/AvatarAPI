@@ -1,13 +1,13 @@
 {
-  "name": "roblox-avatar-api",
+  "name": "AdworthGames/AvatarAPI",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Adworth Games",
+  "license": "Custom (See LICENSE File)",
   "description": "",
   "dependencies": {
     "axios": "^1.10.0",
